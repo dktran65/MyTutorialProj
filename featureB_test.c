@@ -11,6 +11,10 @@ void* alloc_data()
 
 void memory_leak_violation()
 {
+	char a= 3;
+	
+	a = 123456789;
+	
 	alloc_data();
 	// Resolution: Rewtire to use as followed...
 	void* ptr = alloc_data(); 
