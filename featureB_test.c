@@ -12,7 +12,9 @@ void* alloc_data()
 void memory_leak_violation()
 {
 	char a= 3;
+	int bV[2] ={1,2};
 	
+	bV[2] = 5;
 	a = 123456789;
 	
 	alloc_data();
