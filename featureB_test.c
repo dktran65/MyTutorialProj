@@ -13,7 +13,7 @@ void memory_leak_violation()
 {
 	alloc_data();
 	// Resolution: Rewtire to use as followed...
-	// void* ptr = alloc_data(); 
-	// free(ptr);
+	void* ptr = alloc_data(); 
+	free(ptr);
 }
 
