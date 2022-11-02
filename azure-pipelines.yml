@@ -18,8 +18,7 @@ variables:
   # Local Project Workspace
   WORKSPACE: $(PWD)
 
-pool:
-  name: WIN10VM64CI
+pool: WIN10VM64CI
 
 stages:
 - stage: Analysis
