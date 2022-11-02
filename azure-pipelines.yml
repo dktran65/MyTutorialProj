@@ -10,6 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- script: echo AzDevPos_MyTutorialProj
+  displayName: 'Run AzureDevOps Pipeline'
+  
 - script: |
     make
   displayName: 'make'
