@@ -28,4 +28,4 @@ stages:
       - job: build
         steps:
           - script: |
-            $(KW_TOOLS)\kwinject.exe make clean all
+            $(KW_TOOLS)\kwinject.exe make clean all 
