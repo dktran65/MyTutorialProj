@@ -26,6 +26,9 @@ stages:
   - job: Build
     steps:
     - script: |
-        C:\Perforce\Klocwork\kwbuildtools22.3\bin\kwinject.exe make clean all
-        C:\Perforce\Klocwork\kwbuildtools22.3\bin\kwbuildproject.exe --url http://localhost:8080/K_Cpp_Win10CI_Azure -o kwtables -f kwinject.out
-        C:\Perforce\Klocwork\kwbuildtools22.3\bin\kwadmin --url http://localhost:8080 load K_Cpp_Win10CI_Azure kwtables
+        echo hello
+        whoami
+        
+        # C:\Perforce\Klocwork\kwbuildtools22.3\bin\kwinject.exe make clean all
+        # C:\Perforce\Klocwork\kwbuildtools22.3\bin\kwbuildproject.exe --url http://localhost:8080/K_Cpp_Win10CI_Azure -o kwtables -f kwinject.out
+        # C:\Perforce\Klocwork\kwbuildtools22.3\bin\kwadmin --url http://localhost:8080 load K_Cpp_Win10CI_Azure kwtables
