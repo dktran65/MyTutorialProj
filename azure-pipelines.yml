@@ -16,7 +16,7 @@ variables:
   KW_INJECTFILE: 'kwinject.out'
 
   # Local Project Workspace
-  WORKSPACE: $(PWD)
+  # WORKSPACE: $(PWD)
 
 pool: WIN10VM64CI
 
