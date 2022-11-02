@@ -1,18 +1,31 @@
-# C/C++ with GCC
-# Build your C/C++ project with GCC using make.
-# Add steps that publish test results, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/apps/c-cpp/gcc
+# Demonstrate Klocwork Full Integration Analysis
 
 trigger:
-- main
+  branches:
+    include:
+    - main
+
+variables:
+  # Validate Portal Variables
+  VD_PROJNAME: 'K_Cpp_Win10CI_Azure'
+  VD_SVR_PORTAL: 'localhost'
+  VD_SVR_PORT: '8080'
+  
+  # Klocwork Tools
+  KW_TOOLS: 'C:\Perforce\Klocwork\kwbuildtools22.3\bin'
+  KW_INJECTFILE: 'kwinject.out'
+
+  # Local Project Workspace
+  WORKSPACE: $(PWD)
 
 pool:
-  vmImage: ubuntu-latest
+  name: WIN10VM64CI
 
-steps:
-- script: echo AzDevPos_MyTutorialProj
-  displayName: 'Run AzureDevOps Pipeline'
-  
-- script: |
-    make
-  displayName: 'make'
+stages:
+  - stage: build
+    displayName: Build Project
+    jobs:
+      - job: build
+        steps:
+          - script: |
+            $(KW_TOOLS)\kwinject.exe make clean all
