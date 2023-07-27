@@ -14,8 +14,8 @@ void memory_leak_violation()
 	char a= 3;
 	int bV[2] ={1,2};
 	
-	bV[2] = 5;
-	a = 123456789;
+	bV[4] = 5;
+	a = (int) 1234;
 	
 	alloc_data();
 	// Resolution: Rewtire to use as followed...

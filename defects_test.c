@@ -3,11 +3,19 @@
  */
 #include <stdlib.h>
 
-//PRQA S 3205 ++  # Testing - Turn OFF the 3205 Error Code for this file
-
 int main() {
 	char *a;
-	int b=1;		//PRQA S 2211 # Testing - Turn OFF  the Error 2211 for this line ONLY
+	int b=1;		
+	char str_array[10];
+    char *p_str = str_array;
+    char value;
+
+    sprintf(str_array,"This defect is about long format string\n");
+    printf("The value of P is %s", *p_str);
+    *p_str = NULL;
+
+    value = *p_str;
+    printf("The date for value is%s", value);
 
 	free(a);
 	return 0;
@@ -17,7 +25,7 @@ void array_boundery_violation()
 {
 	int aBV[3] = {1,2,3};
 
-	aBV[4]= 5;	//PRQA S 2840 # Another supp OFF for snaphot 4
+	aBV[4]= 5;	
 }
 
 
